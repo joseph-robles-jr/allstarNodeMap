@@ -1,0 +1,223 @@
+/* ==========================================
+   AllStar Node Map Module
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* ==========================================
+   Theme Variables
+   ========================================== */
+
+:root {
+    --asn-primary-color: #2660A4;
+    --asn-secondary-color: #859DB8;
+    --asn-text-color: #000;
+    --asn-background-color: #FFF;
+
+    --asn-unvisited-links: ##0000EE;
+    --asn-visited-links: #551A8B;
+
+    --asn-border-color: #B8C8DB;
+    --asn-header-border-color: #D0DBE8;
+
+    --asn-connected-bg: #FFF8EC;
+    --asn-connected-border: #F4A340;
+
+    --asn-head-bg-start: #E9F7E9;
+    --asn-head-bg-end: #D7F0D7;
+    --asn-head-border: #C0EBC0;
+
+    --asn-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+
+    --asn-border-radius: 12px;
+    --asn-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --asn-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   Reset
+   ========================================== */
+
+.asn-node-map,
+.asn-node-map *,
+.asn-node-map *::before,
+.asn-node-map *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   Root Container
+   ========================================== */
+
+.asn-node-map {
+    padding: 1.5rem;
+
+    font-family: var(--asn-font-family);
+    color: var(--asn-text-color);
+    background-color: var(--asn-background-color);
+
+    border: 1px solid var(--asn-border-color);
+    border-radius: var(--asn-border-radius);
+}
+
+.asn-node-map h3 {
+    margin-bottom: 1rem;
+
+    text-align: center;
+    color: var(--asn-primary-color);
+}
+
+/* ==========================================
+   Links
+   ========================================== */
+
+.asn-node-map a,
+.asn-node-link {
+    display: block;
+
+    color: var(--asn-unvisited-links);
+    /* text-decoration: none; */
+}
+
+.asn-node-link:hover {
+    color: var(--asn-visited-links);
+}
+
+/* ==========================================
+   ERRORS 
+   ========================================== */
+.asn-error{
+    font-family: var(--asn-font-family);
+    color: red;
+    text-align: center;
+    font-weight: strong;
+    font-size: x-large;
+    
+}
+
+.asn-warn {
+    font-family: var(--asn-font-family);
+    color: var(--asn-primary-color);
+    text-align: center;
+    font-weight: strong;
+    font-size: medium;
+    
+}
+
+
+   
+/* ==========================================
+   Node Cards
+   ========================================== */
+
+.asn-node {
+    flex: 1 1 280px;
+
+    min-width: 250px;
+    max-width: 350px;
+
+    padding: 1rem;
+
+    background-color: #FFF;
+
+    border: 1px solid var(--asn-border-color);
+    border-radius: var(--asn-border-radius);
+
+    box-shadow: var(--asn-card-shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.asn-node:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--asn-card-shadow-hover);
+}
+
+.asn-node h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+
+    text-align: center;
+
+    color: var(--asn-primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--asn-header-border-color);
+}
+
+.asn-node ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.asn-node li {
+    margin-bottom: 0.25rem;
+
+    font-family: Consolas, Monaco, monospace;
+}
+.asn-card-button-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+/* ===== Buttons ===== */
+.asn-small-button {
+  padding: 5px 5px;
+  margin-inline: 3px;
+  min-height: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--asn-primary-color);
+  color: white;
+
+  font-size: .75rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+.asn-small-button:hover {
+  background: #15376c;
+}
+
+/* ==========================================
+   Node Layout
+   ========================================== */
+
+.asn-connected-nodes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ==========================================
+   Connected Nodes
+   ========================================== */
+
+.asn-connected-node {
+    background-color: var(--asn-connected-bg);
+    border-left: 4px solid var(--asn-connected-border);
+}
+
+/* ==========================================
+   Head Node
+   ========================================== */
+
+.asn-head-node {
+    background: linear-gradient(
+        135deg,
+        var(--asn-head-bg-start),
+        var(--asn-head-bg-end)
+    );
+
+    border: 2px solid var(--asn-head-border);
+}
