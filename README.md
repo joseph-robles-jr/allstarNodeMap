@@ -11,7 +11,7 @@ There are 2 ways to run this. You can either import the module directly from `js
 At the top of the `NodeMapApp.js` file, you will see `const DEFAULT_NODE_NUMBER = 603450;`. This is the default AllStarLink node number that is loaded when the page is loaded. Change this to whatever you want to start at, like `const DEFAULT_NODE_NUMBER = 51018;` for the W6EK repeater. Then move these files into a webserver of your choosing. It should just work.
 
 ### Note:
-Web browsers require this project to be served over HTTP because it loads JavaScript modules. It is a security feature. This project will not function if simply opening the `NodeMapApp.html' file from a . A web server like Apache2 or Java's Tomcat is necessary. 
+Web browsers require this project to be served over HTTP because it loads JavaScript modules. It is a security feature. This project will not function if simply opening the `NodeMapApp.html' file from a file browser. A web server like Apache2 or Java's Tomcat is necessary. 
 
 
 
